@@ -14,7 +14,7 @@
 .ls-info {
 	background: #fff;
 	width: 90%;
-	border: 3px solid #E7C291;
+	border: 3px solid #6bd4e2;
 	border-collapse: separate;
 	border-radius: 10px;
 	z-index: 10;
@@ -51,7 +51,7 @@ p {
 	margin-bottom: 20px;
 	margin-left: 25px !important;
 	margin-right: 25px !important;
-	background-color: #E7C291;
+	background-color: #6bd4e2;
 	height: 3px !important;
 	border-radius: 6px;
 }
