@@ -17,7 +17,7 @@ function readFiles() {
 	});
 }
 
-window.onload = function () {
+function addArt() {
 	readFiles();
 	links.forEach(link => {
 		document.getElementById('images').innerHTML += `<a href=${link}><img src=${link} width=120 /></a>`;
