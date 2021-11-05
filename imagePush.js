@@ -1,25 +1,23 @@
-const path = require('path');
-const fs = require('fs');
 
-const directoryPath = path.join(__dirname, './images/art');
-const links = [];
+let links = []; links = loadFile('./images/art/').split('\n');
+console.log(links);
 
-function readFiles() {
-	fs.readdir(directoryPath, function (err, files) {
-		if (err) {
-			return console.log('Unable to scan directory: ' + err);
-		}
-		files.forEach(function (file) {
-			links.push(file)
-			console.log(file);
-		});
-		console.log(links);
-	});
+function loadFile(filePath) {
+	var result = null;
+	var xmlhttp = new XMLHttpRequest();
+	xmlhttp.open("GET", filePath, false);
+	xmlhttp.send();
+	if (xmlhttp.status == 200) {
+		result = xmlhttp.responseText;
+	}
+	return result;
 }
 
 function addArt() {
-	readFiles();
 	links.forEach(link => {
-		document.getElementById('images').innerHTML += `<a href=${link}><img src=${link} width=120 /></a>`;
+		let imageAdd = document.createElement("img");
+		let image = document.createTextNode(`${link}`);
+		imageAdd.appendChild(image);
+		document.querySelector("#images").appendChild(imageAdd);
 	});
 }

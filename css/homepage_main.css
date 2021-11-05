@@ -18,6 +18,11 @@ body {
 	animation: fadeIn 1 1s ease-out;
 }
 
+img {
+	width: 48vw;
+	text-align: center;
+}
+
 
 /* ---- scroll bar ---- */
 
